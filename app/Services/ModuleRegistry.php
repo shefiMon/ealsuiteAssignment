@@ -1,7 +1,6 @@
 <?php
 namespace App\Services;
 
-use App\Contracts\CrudeServiceInterface;
 use App\Interfaces\ModuleServiceInterface;
 
 class ModuleRegistry
