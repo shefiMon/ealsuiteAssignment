@@ -18,7 +18,7 @@ class CustomerService implements \App\Interfaces\ModuleServiceInterface
             }
 
             $perPage = $request->get('per_page', 10);
-            return $query->paginate($perPage);
+            return $query->orderBy('id',"desc")->paginate($perPage);
         } catch (\Exception $e) {
             throw new \Exception('Error listing customers: ' . $e->getMessage());
         }
