@@ -4,6 +4,7 @@ namespace App\Modules\Customers\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Customers\Models\Customer;
+use App\Modules\Customers\Services\CustomerService;
 use Illuminate\Http\Request;
 
 
@@ -28,10 +29,9 @@ class CustomerController extends Controller
     /**
      * Show form for editing customer
      */
-    public function edit($customerId)
+    public function edit($customerId, CustomerService $service)
     {
-        $customer = Customer::findOrFail($customerId);
-
+        $customer = $service->getById($customerId);
 
         return view('customers.edit', compact('customer'));
     }

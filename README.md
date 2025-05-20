@@ -11,7 +11,7 @@
 ## Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/shefiMon/ealsuite.git
+git clone https://github.com/shefiMon/ealsuiteAssignment.git
 cd ealsuite
 ```
 
@@ -34,6 +34,13 @@ php artisan key:generate
 ```bash
 php artisan migrate
 php artisan db:seed
+php artisan db:seed --class=UserSeeder
+```
+
+Default login credentials:
+```
+Email: admin@example.com
+Password: 123456
 ```
 
 5. Build assets:

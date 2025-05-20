@@ -4,6 +4,7 @@ namespace App\Modules\Invoices\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Invoices\Models\Invoice;
+use App\Modules\Invoices\Services\InvoiceService;
 
 class InvoiceController extends Controller
 {
@@ -25,9 +26,9 @@ class InvoiceController extends Controller
     /**
      * Show form for editing customer
      */
-    public function edit($invoiceId)
+    public function edit($invoiceId, InvoiceService $service)
     {
-        $invoice = Invoice::findOrFail($invoiceId);
+        $invoice = $service->getById($invoiceId);
 
         return view('invoices.edit', compact('invoice'));
     }
